@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX</title>
+</head>
+<body>
+    <% console.log('locals object:' + locals.user) %>
+    <% if (locals.user) {%>
+
+        <h1> hello <%= locals.user.username %></h1>
+        <a href="/logout"><button>log out</button></a>    
+    <% } else { %>
+        <h1>welcome, MEMBERS ONLY!!!!</h1>
+        <a href="/signup"><button>sign up</button></a>
+        <a href="/login"><button>login</button></a>
+    <% } %>
+    
+</body>
+</html>
