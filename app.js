@@ -1,5 +1,6 @@
 //to do
 //make existing users able to become members (dont have to be a member from the jump)
+//make become a member view and logic
 
 //boilerplate
 const express = require('express');
@@ -40,14 +41,14 @@ app.use(express.urlencoded({extended: false}))
 
 
 passport.use(
-    new LocalStrategy({      
-      //custom name options
-      usernameField: 'userNameLogin',
-      passwordField: 'passwordLogin',
-    },
-      async (username, password, done) => {
+  new LocalStrategy({      
+    //custom name options
+    usernameField: 'userNameLogin',
+    passwordField: 'passwordLogin',
+  },
+  async (username, password, done) => {
       try {
-      const loggedUserData = await database.loginUser(username, password);
+      const loggedUserData = await database.loginUser(username);
       const loggedUser = loggedUserData.rows[0]
       console.log('logged user: ' + loggedUser)
       if(loggedUser == undefined)
@@ -70,14 +71,14 @@ passport.use(
 //passport
   passport.serializeUser(async (user, done) => {
     console.log('serialized')
+    // console.log(user)
     done(null, user);
     });
     
-  passport.deserializeUser(async (id, done) => {
+  passport.deserializeUser(async (user, done) => {
     console.log('deserialized')
-    // const data = await pool.query('select * from users where id = $1', [id])
-    // console.log(data)
-    done(null, id)
+    // console.log(user)
+    done(null, user)
   });
 
 //route imports
@@ -85,12 +86,19 @@ const indexRoute = require('./routes/indexRoute')
 const signupRoute = require('./routes/signupRoute')
 const loginRoute = require('./routes/loginRoute');
 const logoutRoute = require('./routes/logoutRoute.js')
+const becomeMemberRoute = require('./routes/becomememberRoute.js')
+const newMessageRoute = require('./routes/newMessageRoute.js')
+const adminControlsRoute = require('./routes/adminControls.js')
 
 //routes
 app.use('/', indexRoute)
 app.use('/signup', signupRoute)
 app.use('/login', loginRoute)
 app.use('/logout', logoutRoute)
+app.use('/become-a-member', becomeMemberRoute)
+app.use('/newmessage', newMessageRoute)
+app.use('/admincontrols', adminControlsRoute)
+
 
 const PORT = 3000;
 app.listen(PORT, () => {console.log(`running on port ${PORT}`)})

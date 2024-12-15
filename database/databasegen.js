@@ -10,6 +10,7 @@ ALTER TABLE users ADD COLUMN IF NOT EXISTS lastname varchar(255);
 ALTER TABLE users ADD COLUMN IF NOT EXISTS member varchar(255);
 ALTER TABLE users ADD COLUMN IF NOT EXISTS admin varchar(255);`
 
+
 console.log(process.env.HOST)
 
 const generateDatabase = async () => {
@@ -17,9 +18,9 @@ const generateDatabase = async () => {
     const database = new Pool({
         connectionString: process.env.POSTGREURL,
     })
-    await database.connect()
-    await database.query(schema)
-    await database.end()
+    // await database.connect()
+    await console.log(database.query(schema))
+    // await database.end()
     return console.log('done generating table')
 }
 generateDatabase()

@@ -6,7 +6,11 @@ const indexRoute = Router()
 
 indexRoute.get('/', async (req, res) => {
     console.log('index')
-    res.render('indexView', {user: req.user}
+    const messageList = await indexControllerFunc()
+    console.log('all messages: ' + messageList[0])
+    res.render('indexView', {user: req.user,
+        messages: messageList
+    }
     )
 })
 

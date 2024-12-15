@@ -6,16 +6,39 @@
     <title>INDEX</title>
 </head>
 <body>
-    <% console.log('locals object:' + locals.user) %>
+    
+    <% console.log(locals.user) %>
     <% if (locals.user) {%>
-
         <h1> hello <%= locals.user.username %></h1>
-        <a href="/logout"><button>log out</button></a>    
-    <% } else { %>
-        <h1>welcome, MEMBERS ONLY!!!!</h1>
-        <a href="/signup"><button>sign up</button></a>
-        <a href="/login"><button>login</button></a>
+        <a href="/logout"><button>log out</button></a>
+        <a href="/newmessage"><button>Write a new message</button></a>
+        <% } else { %>
+            <h1>welcome, MEMBERS ONLY!!!!</h1>
+            <a href="/signup"><button>sign up</button></a>
+            <a href="/login"><button>login</button></a>
+            <a href="/become-a-member"><button>Become a member</button></a>  
     <% } %>
+
+    <% locals.messages.map((message) => {%>
+        <div style="border: solid black;">
+            <% if (locals.user) { %>
+                <% if (locals.user.member == 'member') { %>
+                    <form action="/admincontrols/deletemessage" method="post">
+                        <input type="text" name="messageid" id="" value="<%= message.id %>" readonly>
+                        <button type="submit">DELETE MESSAGE</button>
+                    </form>
+                <% } %>
+            <% } %>
+            <% if (locals.user) { %>
+                <% if (locals.user.member == 'member') { %>
+                    <h1> <%= message.posting_user %> </h1>
+                    <h1> <%= message.date_posted %> </h1>
+                    <% } %>
+                    <% } %>
+                    <h1> <%= message.message %> </h1>
+        </div>
+    <% }) %>
+
     
 </body>
 </html>

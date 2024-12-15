@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new Message</title>
+</head>
+<body>
+    
+    <h3>NEW MESSAGE</h3>
+    <form action="" method="post">
+        <input value='<%= locals.user.username %>' name="username" type="text" readonly>
+        <input name="message" type="text">
+        <button type="submit">Post message</button>
+    </form>
+</body>
+</html>
