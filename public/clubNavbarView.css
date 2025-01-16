@@ -1,0 +1,22 @@
+#club_logo {
+    border-radius: 15px;
+    height: 100px;
+    width: 100px;
+    box-shadow: 2px 2px 2px black;
+}
+
+#web_header {
+    background-color: rgb(128, 128, 128, 0.5);
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#club_name_and_logo {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}

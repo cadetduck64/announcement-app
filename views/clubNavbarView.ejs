@@ -1,0 +1,19 @@
+    <link rel="stylesheet" href="/clubNavbarView.css">
+    <div id="web_header">
+    <div id="club_name_and_logo">
+    <img id="club_logo" src="https://linksmagazine.com/wp-content/uploads/2020/05/Merion-Logo-500x500.jpeg" alt="">
+    <h1> Endeavor country club</h1>
+    </div>
+    <div>
+        <a href="/"><button>Home</button></a>
+    <% if (locals.user) {%>
+        <a href="/logout"><button>log out</button></a>
+        <a href="/newmessage"><button>Write a new message</button></a>
+        <% } else { %>
+            <a href="/signup"><button>sign up</button></a>
+            <a href="/login"><button>login</button></a>
+            <a href="/become-a-member"><button>Become a member</button></a>  
+    <% } %>
+    </div>
+    </div>
+    

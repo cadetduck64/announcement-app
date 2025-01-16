@@ -1,0 +1,53 @@
+body {
+    background-image: url(https://www.countrycluboforlando.com/images/dynamic/getImage.gif?ID=100002561);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+#main-div {
+    padding: 1%;
+    max-width: 60%;
+    position: fixed;
+    top: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#become-member-div {
+    padding: 1%;
+    background-color: white;
+    min-width: 250px;
+    min-height: 300px;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+#become-member-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#become-member-form > input {
+    min-height: 30px;
+    margin: 3%;
+}
+
+#club_logo {
+    width: 100px;
+    height: 100px;
+}

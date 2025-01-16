@@ -1,0 +1,55 @@
+body {
+    background-image: url(https://archicgi.com/wp-content/uploads/2023/02/3d-architectural-exterior-visualization-first-render.jpg);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+#main-login-up-div {
+    padding: 1%;
+    background-color: white;
+    min-width: 250px;
+    min-height: 300px;
+    position: fixed;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+#login-div {
+    padding: 1%;
+    background-color: white;
+    min-width: 350px;
+    min-height: 400px;
+    position: fixed;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+
+#club_logo {
+    width: 100px;
+    height: 100px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form > input {
+    min-height: 30px;
+    
+    margin: 3%;
+}

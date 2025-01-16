@@ -1,0 +1,137 @@
+body {
+    background-image: url(https://media.architecturaldigest.com/photos/5c79899fe43f6f2dc024db21/4:3/w_1440,h_1080,c_limit/Hyatt%20Regency%20Cleveland.jpg);
+    /* background-position: center; */
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    background-repeat: round;
+    flex-direction: column;
+}
+
+.tooltip {
+    visibility: hidden;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+
+.tooltip:hover{
+    visibility: visible;
+}
+
+#club_logo {
+    border-radius: 15px;
+    height: 100px;
+    width: 100px;
+    box-shadow: 2px 2px 2px black;
+}
+
+#web_header {
+    background-color: rgb(128, 128, 128, 0.5);
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#club_name_and_logo {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#messages-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message {
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    color: whitesmoke;
+    background-color: brown;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1%;
+    padding: 1%;
+    border: solid black;
+    box-shadow: 2px 2px 2px black;
+}
+
+.message-content {
+    margin: 1%;
+    padding: 1%;
+    border-radius: 15px;
+    background-color: rgb(128, 128, 128, 0.5);
+    border: solid black;
+}
+
+.member-exclusive-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#content {
+    position: relative;
+    left: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 1%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px black;
+    border: solid black;
+    color: white;
+    background-color: brown;
+}
+
+#main-announcement {
+    display: flex;
+    flex-direction: row;
+}
+
+#main-announcement-image {
+    margin: 1%;
+    border-radius: 15px;
+    height: 250px;
+    width: 45%;
+    border: solid black;
+    background-image: url(https://images.squarespace-cdn.com/content/v1/65899401195ba416670c0913/53bb332c-b67e-45ba-8d37-1d79ab91dc77/6850.jpg);
+    background-position: left;
+    background-size: cover;
+}
+
+#main-announcement-message-div {
+    margin: 1%;
+    padding: 1%;
+    width: 55%;
+    border-radius: 15px;
+    background-color: rgb(128, 128, 128, 0.5);
+}
+
+#member-message-banner {
+    position: relative;
+    left: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: 1%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px black;
+    border: solid black;
+    color: white;
+    background-color: brown;
+}
+
+.share-button {
+    width: 50px;
+    height: 50px;
+}

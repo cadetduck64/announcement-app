@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>new Message</title>
+    <link rel="stylesheet" href="newMessageStyle.css">
 </head>
 <body>
-    
-    <h3>NEW MESSAGE</h3>
-    <form action="" method="post">
-        <input value='<%= locals.user.username %>' name="username" type="text" readonly>
-        <input name="message" type="text">
-        <button type="submit">Post message</button>
-    </form>
+    <%- include('clubNavbarView.ejs')%>
+    <div id="new-message-div">
+        <div id="new-message-header">
+        <img id="club_logo" src="https://linksmagazine.com/wp-content/uploads/2020/05/Merion-Logo-500x500.jpeg" alt="">
+        <h3>NEW MESSAGE</h3>
+        </div>
+        <form id="form-div" action="" method="post">
+            <input value='<%= locals.user.username %>' name="username" type="text" readonly>
+            <textarea id="new-message-input" name="message" type="text"></textarea>
+            <button type="submit">Post message</button>
+        </form>
+    </div>
 </body>
 </html>

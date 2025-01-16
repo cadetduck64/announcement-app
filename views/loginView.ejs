@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
+    <link rel="stylesheet" href="loginStyle.css">
 </head>
 <body>
-    <a href="/"><button>Home</button></a>
-    <h1>Login</h1>
-    <form action="" method="post">
-        <input name="userNameLogin" type="text" placeholder="username" required>
-        <input name="passwordLogin" type="text" placeholder="password" required>
-        <button type="submit">Log in</button>
-    </form>
+    <%- include('clubNavbarView.ejs')%>
+    <div id="main-login-up-div">
+        <div id="login-div">
+            <img id="club_logo" src="https://linksmagazine.com/wp-content/uploads/2020/05/Merion-Logo-500x500.jpeg" alt="">
+        <h1>Login</h1>
+        <form id="login-form" action="" method="post">
+            <input name="userNameLogin" type="text" placeholder="username" required>
+            <input name="passwordLogin" type="text" placeholder="password" required>
+            <button type="submit">Log in</button>
+        </form>
+        </div>
+    </div>
 </body>
 </html>
 

@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="becomeMemberStyle.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="/"><button>Home</button></a>
-    <h1>become a member</h1>
-    <form method="post" action="become-a-member">
-        <label for="username">username</label>
-        <input name="userNameLogin" type="text">
-        <label for="password">password</label>
-        <input name="passwordLogin" type="text">
-        <label for="memberPassword">Member Password</label>
-        <input name="memberPassword" type="text">
-        <button type="submit">submit</button>
-    </form>
+    <%- include('clubNavbarView.ejs')%>
+    <div id="main-div">
+        <div id="become-member-div">
+        <h1>Become a member</h1>
+        <form id="become-member-form" method="post" action="become-a-member">
+            <label for="username">Username</label>
+            <input name="userNameLogin" type="text">
+            <label for="password">Password</label>
+            <input name="passwordLogin" type="text">
+            <label for="memberPassword">Member Password</label>
+            <input name="memberPassword" type="text">
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    </div>
 </body>
 </html>

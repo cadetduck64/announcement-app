@@ -4,40 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDEX</title>
+    <link rel="stylesheet" href="/indexStyle.css">
 </head>
 <body>
+
     
     <% console.log(locals.user) %>
-    <% if (locals.user) {%>
-        <h1> hello <%= locals.user.username %></h1>
+    <div id="web_header">
+    <div id="club_name_and_logo">
+    <img id="club_logo" src="https://linksmagazine.com/wp-content/uploads/2020/05/Merion-Logo-500x500.jpeg" alt="">
+    <h1> Endeavor Country Club</h1>
+    </div>
+    
+    <div>
+    <% if (locals.user) { %>
+        <h1> Hello <%= locals.user.username %></h1>
+        <a href="/logout"><button>log out</button></a>
+        <a href="/become-a-member"><button>Become a member</button></a>
+        <% if (locals.user.admin) { %>
+            <h1>ADMIN MODE</h1>
+            <h1> Hello <%= locals.user.username %></h1>
+            <a href="/logout"><button>log out</button></a>
+            <a href="/newmessage"><button>Write a new message</button></a>
+        <% } else if (locals.user.member) { %> 
+        <h1> Hello <%= locals.user.username %></h1>
         <a href="/logout"><button>log out</button></a>
         <a href="/newmessage"><button>Write a new message</button></a>
-        <% } else { %>
-            <h1>welcome, MEMBERS ONLY!!!!</h1>
-            <a href="/signup"><button>sign up</button></a>
-            <a href="/login"><button>login</button></a>
-            <a href="/become-a-member"><button>Become a member</button></a>  
+        <a href="/become-a-member"><button>Become a member</button></a>
+        <% } %> 
+    <% } else { %>
+        <a href="/signup"><button>sign up</button></a>
+        <a href="/login"><button>login</button></a>
     <% } %>
 
-    <% locals.messages.map((message) => {%>
-        <div style="border: solid black;">
+    </div>
+    </div>
+
+    <div id="content">
+        <h1>Main announcements</h1>
+    <div id="main-announcement">
+        <div id="main-announcement-image">
+
+        </div>  
+        <div id="main-announcement-message-div">
+        <p id="main-announcement-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quidem tempora similique. Reprehenderit, nam magnam similique ratione quis labore esse omnis ea, facere repellat odio, cupiditate quidem sapiente inventore fuga.</p>  
+        </div>
+    </div>
+    
+    </div>
+    <!-- message feed -->
+     <h1 id='member-message-banner'>Member messages</h1>
+     <div id="messages-div">
+    <% locals.messages.map((message) => { %>
+        <div id="<%= message.id %>" class="message">
+            
             <% if (locals.user) { %>
-                <% if (locals.user.member == 'member') { %>
+                <% if (locals.user.admin == 'admin') { %>
                     <form action="/admincontrols/deletemessage" method="post">
-                        <input type="text" name="messageid" id="" value="<%= message.id %>" readonly>
-                        <button type="submit">DELETE MESSAGE</button>
+                        <div class="member-exclusive-info">
+                            <button type="submit">delete message</button>
+                            <h3>Author: <%= message.posting_user %> </h3>
+                            <h3>Date Posted: <%= message.date_posted %> </h3>
+                        </div>
+                        <input hidden type="text" name="messageid" id="" value="<%= message.id %>" readonly>
                     </form>
                 <% } %>
             <% } %>
             <% if (locals.user) { %>
                 <% if (locals.user.member == 'member') { %>
-                    <h1> <%= message.posting_user %> </h1>
-                    <h1> <%= message.date_posted %> </h1>
+                    <div class="member-exclusive-info">
+                    <h3>Author: <%= message.posting_user %> </h3>
+                    <h3>Date Posted: <%= message.date_posted %> </h3>
+                    </div>
                     <% } %>
                     <% } %>
-                    <h1> <%= message.message %> </h1>
+                    <h1 class="message-content"> <%= message.message %> </h1>
+                    <a  href="#<%= message.id %>"><img class="share-button" src="https://static-00.iconduck.com/assets.00/share-icon-2048x1911-60w04qpe.png" alt=""></a>
         </div>
     <% }) %>
+    </div>
 
     
 </body>
